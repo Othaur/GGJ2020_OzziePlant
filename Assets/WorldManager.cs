@@ -5,7 +5,7 @@ using Unity.Entities;
 using Unity.Transforms;
 using Unity.Mathematics;
 
-public class testing : MonoBehaviour
+public class WorldManager : MonoBehaviour
 {
     EntityManager entityManager;
     Entity treeEntityPrefab;
@@ -31,10 +31,8 @@ public class testing : MonoBehaviour
         Entity entity = entityManager.Instantiate(treeEntityPrefab);
 
         entityManager.SetComponentData(entity, new Age { Value = 0 });
-       // entityManager.SetComponentData(entity, new NonUniformScale { Value = new float3(1, 6, 1) });
+        // entityManager.SetComponentData(entity, new NonUniformScale { Value = new float3(1, 6, 1) });
 
         entityManager.SetComponentData(entity, new Translation { Value = new float3(pos.x, pos.y, pos.z) });
-        
-
     }
 }
