@@ -12,13 +12,10 @@ public class AgingSystem : JobComponentSystem
     {
         float dt = Time.DeltaTime;
 
-        JobHandle ageJob = Entities.ForEach((ref Age age, ref NonUniformScale scale) =>
+        JobHandle ageJob = Entities.ForEach((ref AgeComponent age) =>
         {
             float growValue;
-            age.Value += (dt / 10f);
-
-            growValue = 1 + (dt / 10f);
-            scale.Value *= new float3(growValue, growValue, growValue);
+            age.Value += (dt / 10f);        
             
         }
 

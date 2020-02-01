@@ -10,11 +10,12 @@ public class StopAgingSystem : JobComponentSystem
 
     protected override JobHandle OnUpdate(JobHandle inputDeps)
     {
-        Entities.WithStructuralChanges().WithoutBurst().ForEach((ref Age age, in Entity id) =>
+        Entities.WithStructuralChanges().WithoutBurst().ForEach((ref AgeComponent age, in Entity id) =>
         {
             if (age.Value > 4)
             {
-               EntityManager.RemoveComponent(id, typeof(Age));
+               EntityManager.RemoveComponent(id, typeof(AgeComponent));
+                EntityManager.AddComponent(id, typeof(ReadyToSeedTag));
                 
             }
 

@@ -4,7 +4,6 @@ using UnityEngine;
 using Unity.Entities;
 
 [GenerateAuthoringComponent]
-public struct Age : IComponentData
-{
-    public float Value;
+public struct SeedTag : IComponentData
+{    
 }
