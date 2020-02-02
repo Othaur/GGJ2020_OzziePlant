@@ -33,7 +33,7 @@ public class SeedCollectionSystem : JobComponentSystem
         
         return collisionJob;
     }*/
-    [BurstCompile]
+    //[BurstCompile]
     struct LifeTimeJob : IJobForEachWithEntity<ColliderComponent, Translation>
     {
         public Vector3 PlayerPosition;
@@ -41,8 +41,6 @@ public class SeedCollectionSystem : JobComponentSystem
         [WriteOnly]
         public EntityCommandBuffer.Concurrent CommandBuffer;
 
-        [WriteOnly]
-        public int SeedCount;
 
         public void Execute(Entity entity, int jobIndex, ref ColliderComponent collider, ref Translation translation)
         {
@@ -50,8 +48,9 @@ public class SeedCollectionSystem : JobComponentSystem
 
             if (dist < collider.size)
             {
-                CommandBuffer.DestroyEntity(jobIndex, entity);
-                SeedCount++;
+                CommandBuffer.DestroyEntity(jobIndex, entity);    
+                Settings.AddSeed();
+                //SoundController.Instance.PlayCollectSound();
             }
         }
     }
@@ -60,8 +59,7 @@ public class SeedCollectionSystem : JobComponentSystem
     {
         var commandBuffer = m_Barrier.CreateCommandBuffer().ToConcurrent();
         Vector3 tempPos = Settings.PlayerPosition;
-        int seedCount = 0;
-
+    
         var job = new LifeTimeJob
         {
             PlayerPosition = tempPos,
@@ -71,15 +69,7 @@ public class SeedCollectionSystem : JobComponentSystem
         }.Schedule(this, inputDependencies);
 
         m_Barrier.AddJobHandleForProducer(job);
-
-        job.Complete();
-        if (seedCount > 0)
-        {
-            for (int i = 0; i < seedCount; i++)
-            {
-                Settings.AddSeed();
-            }
-        }
+       
         return job;
     }
 }
