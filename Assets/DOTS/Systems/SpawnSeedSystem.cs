@@ -12,7 +12,7 @@ public class SpawnSeedSystem :  JobComponentSystem
 
             EntityManager.RemoveComponent(id, typeof(ReadyToSeedTag));
             
-
+           
 
 
         }

@@ -36,6 +36,9 @@ public class PlanterSystem : MonoBehaviour
         // entityManager.SetComponentData(entity, new NonUniformScale { Value = new float3(1, 6, 1) });
 
         entityManager.SetComponentData(entity, new Translation { Value = new float3(pos.x, pos.y, pos.z) });
+
+        entityManager.AddComponent(entity, typeof(SeedSpawnPoint));
+        entityManager.SetComponentData(entity, new SeedSpawnPoint { Value = new float3(1, 0, 1) });
     }
 
 }
