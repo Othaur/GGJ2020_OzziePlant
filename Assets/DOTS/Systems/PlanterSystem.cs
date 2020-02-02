@@ -24,10 +24,12 @@ public class PlanterSystem : MonoBehaviour
     {
         if (collision.transform.tag == "plantLocation")
         {
-            SoundController.Instance.Play3D(SoundController.Instance.GetRandomClip(SoundController.Instance.planterClips), collision.transform.position);
+            
             // Instantiate(seed, collision.transform.position, Quaternion.identity);
             SpawnTree(collision.transform.position);
             collision.gameObject.tag = "planted";
+            Destroy(collision.gameObject);
+            SoundController.Instance.Play3D(SoundController.Instance.GetRandomClip(SoundController.Instance.planterClips), collision.transform.position);
         }
     }
 

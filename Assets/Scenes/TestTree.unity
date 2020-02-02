@@ -1370,7 +1370,7 @@ Transform:
   m_Children:
   - {fileID: 1080959261}
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &453885106
 MonoBehaviour:
@@ -2109,6 +2109,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: SoundController
       objectReference: {fileID: 0}
+    - target: {fileID: 6999587734484681050, guid: 190ed11a3d36cd0429970d5c3770ee4a,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6999587734484681052, guid: 190ed11a3d36cd0429970d5c3770ee4a,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2680,7 +2685,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400006, guid: ce816f2e6abb0504092c23ed9b970dfd, type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 400006, guid: ce816f2e6abb0504092c23ed9b970dfd, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
