@@ -28,6 +28,7 @@ public class PlanterSystem : MonoBehaviour
             // Instantiate(seed, collision.transform.position, Quaternion.identity);
             SpawnTree(collision.transform.position);
             collision.gameObject.tag = "planted";
+            Destroy(collision.gameObject);
         }
     }
 
