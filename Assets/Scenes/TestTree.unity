@@ -223,6 +223,7 @@ GameObject:
   m_Component:
   - component: {fileID: 453885105}
   - component: {fileID: 453885104}
+  - component: {fileID: 453885106}
   m_Layer: 0
   m_Name: WorldHandler
   m_TagString: Untagged
@@ -258,6 +259,25 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &453885106
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 453885103}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6caf6e66068c6f543b3f2eb19d680398, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  stage1TreePrefab: {fileID: 1542834313934418, guid: c5170255550e6fa43a078b7f187375e7,
+    type: 3}
+  stage2TreePrefab: {fileID: 1842085240381982, guid: 4d567a62afb480c49a270e0e4ea252d0,
+    type: 3}
+  seedPrefab: {fileID: 5425538010264616992, guid: 1cdaf89fa45598941b26d4ba0b2b507d,
+    type: 3}
+  growRateValue: 6
 --- !u!1 &724000635
 GameObject:
   m_ObjectHideFlags: 0
@@ -309,7 +329,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: c94290e8f74062b4ea0e764b72ff46dd, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -450,6 +470,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   treePrefab: {fileID: 7687006541124658792, guid: 68819df661745ed4984947aa3893ffb1,
     type: 3}
+  treeMat: {fileID: 2100000, guid: dbf4f9fef6fdaa9468081c968e6933a1, type: 2}
 --- !u!65 &1866596992
 BoxCollider:
   m_ObjectHideFlags: 0

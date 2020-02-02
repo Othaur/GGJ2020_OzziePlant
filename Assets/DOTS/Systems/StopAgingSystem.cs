@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using Unity.Entities;
 using Unity.Jobs;
+using Unity.Rendering;
+using Unity.Transforms;
+using Unity.Mathematics;
 
 [AlwaysSynchronizeSystem]
 public class StopAgingSystem : JobComponentSystem
@@ -16,7 +19,12 @@ public class StopAgingSystem : JobComponentSystem
             {
                EntityManager.RemoveComponent(id, typeof(AgeComponent));
                 EntityManager.AddComponent(id, typeof(ReadyToSeedTag));
-                
+
+                 RenderMesh tempMesh = World.Active.EntityManager.GetSharedComponentData<RenderMesh>(id);
+                 tempMesh.mesh = Settings.Stage2Prefab();
+
+                EntityManager.SetSharedComponentData(id, new RenderMesh { mesh = tempMesh.mesh, material = tempMesh.material });
+
             }
 
         }

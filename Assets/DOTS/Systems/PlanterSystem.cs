@@ -5,12 +5,14 @@ using UnityEngine;
 using Unity.Entities;
 using Unity.Transforms;
 using Unity.Mathematics;
+using Unity.Rendering;
 
 public class PlanterSystem : MonoBehaviour
 {
     EntityManager entityManager;
     Entity treeEntityPrefab;
     public GameObject treePrefab;
+   
     private void Awake()
     {
         entityManager = World.DefaultGameObjectInjectionWorld.EntityManager;
@@ -25,6 +27,7 @@ public class PlanterSystem : MonoBehaviour
 
             // Instantiate(seed, collision.transform.position, Quaternion.identity);
             SpawnTree(collision.transform.position);
+            collision.gameObject.tag = "planted";
         }
     }
 
@@ -38,7 +41,10 @@ public class PlanterSystem : MonoBehaviour
         entityManager.SetComponentData(entity, new Translation { Value = new float3(pos.x, pos.y, pos.z) });
 
         entityManager.AddComponent(entity, typeof(SeedSpawnPoint));
-        entityManager.SetComponentData(entity, new SeedSpawnPoint { Value = new float3(1, 0, 1) });
+        entityManager.SetComponentData(entity, new SeedSpawnPoint { Value = new float3(UnityEngine.Random.Range(-4,4), 0, UnityEngine.Random.Range(-4, 4)) });
+
+        RenderMesh tempMesh = World.Active.EntityManager.GetSharedComponentData<RenderMesh>(entity);
+        entityManager.SetSharedComponentData(entity, new RenderMesh { mesh = Settings.Stage1Prefab(), material = tempMesh.material });
     }
 
 }

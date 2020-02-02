@@ -11,15 +11,14 @@ public class AgingSystem : JobComponentSystem
     protected override JobHandle OnUpdate(JobHandle inputDeps)
     {
         float dt = Time.DeltaTime;
+        float growSpeed = Settings.growRate;
 
         JobHandle ageJob = Entities.ForEach((ref AgeComponent age) =>
         {
             float growValue;
-            age.Value += (dt / 10f);        
+            age.Value += (dt / growSpeed);        
             
-        }
-
-        ).Schedule(inputDeps);
+        }).Schedule(inputDeps);
 
         return ageJob;
     }
