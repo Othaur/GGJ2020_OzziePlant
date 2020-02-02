@@ -9,7 +9,7 @@ public class PlayerSound : MonoBehaviour
 
     Vector3 lastStep;
 
-    public float stepDistance = 0.5f;
+    public float stepDistance = 1.2f;
 
     private void Awake()
     {
@@ -23,10 +23,10 @@ public class PlayerSound : MonoBehaviour
 
     private void Update()
     {
-        if (Vector3.Distance(transform.position, lastStep) > stepDistance)
+        if (Vector3.Distance(Settings.PlayerPosition, lastStep) > stepDistance)
         {
-            randomSound.PlayRandomClip();
-            lastStep = transform.position;
+            SoundController.Instance.Play2D(SoundController.Instance.GetRandomClip(SoundController.Instance.playerStepClips));
+            lastStep = Settings.PlayerPosition;
         }
     }
 }

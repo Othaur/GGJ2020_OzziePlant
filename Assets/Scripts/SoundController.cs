@@ -13,6 +13,9 @@ public class SoundController : MonoBehaviour
 
     public AudioClip[] seedCollectionClips;
 
+    public AudioClip[] planterClips;
+
+    public AudioClip[] playerStepClips;
 
     private void Awake()
     {
@@ -34,6 +37,7 @@ public class SoundController : MonoBehaviour
         }
 
         AudioSource addedSource = gameObject.AddComponent<AudioSource>();
+        addedSource.loop = false;
         audioSources.Add(addedSource);
         return addedSource;
     }
@@ -54,9 +58,12 @@ public class SoundController : MonoBehaviour
 
     }
 
-    public void PlayCollectSound()
+    public AudioClip GetRandomClip(AudioClip[] audioClips)
     {
-        //int index = Random.Range(0, seedCollectionClips.Length);
-        Play2D(seedCollectionClips[0]);
+
+        int index = Random.Range(0, audioClips.Length);
+        return audioClips[index];
     }
+
+
 }
