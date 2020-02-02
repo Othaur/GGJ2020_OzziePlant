@@ -24,11 +24,14 @@ public class PlanterSystem : MonoBehaviour
     {
         if (collision.transform.tag == "plantLocation")
         {
-
-            // Instantiate(seed, collision.transform.position, Quaternion.identity);
-            SpawnTree(collision.transform.position);
-            collision.gameObject.tag = "planted";
-            Destroy(collision.gameObject);
+            if (Settings.GetSeedCount() > 0 )
+            {
+                // Instantiate(seed, collision.transform.position, Quaternion.identity);
+                SpawnTree(collision.transform.position);
+                Settings.RemoveSeed();
+                collision.gameObject.tag = "planted";
+                Destroy(collision.gameObject);
+            }
         }
     }
 
