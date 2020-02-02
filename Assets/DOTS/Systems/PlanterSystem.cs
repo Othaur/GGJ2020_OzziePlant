@@ -29,6 +29,7 @@ public class PlanterSystem : MonoBehaviour
             SpawnTree(collision.transform.position);
             collision.gameObject.tag = "planted";
             Destroy(collision.gameObject);
+            Settings.RemoveSeed();
             SoundController.Instance.Play3D(SoundController.Instance.GetRandomClip(SoundController.Instance.planterClips), collision.transform.position);
         }
     }
