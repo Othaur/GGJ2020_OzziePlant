@@ -17,6 +17,7 @@ GameObject:
   - component: {fileID: -1758527919657800786}
   - component: {fileID: 5539744855944959279}
   - component: {fileID: -453435101227662433}
+  - component: {fileID: -8973994490801524220}
   m_Layer: 0
   m_Name: SeedEntity
   m_TagString: Untagged
@@ -33,7 +34,7 @@ Transform:
   m_GameObject: {fileID: 5425538010264616992}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.1, y: 0.1, z: 0.1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -139,7 +140,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5972fdcba0655344dbfd06f52f14b6a9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Value: 6
+  Value: 600
 --- !u!114 &5539744855944959279
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -165,3 +166,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ConversionMode: 0
+--- !u!114 &-8973994490801524220
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5425538010264616992}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0897460496de1e145bf04ff3d1e111b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  size: 1

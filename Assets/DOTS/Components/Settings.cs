@@ -11,6 +11,8 @@ public class Settings : MonoBehaviour
     EntityManager entityManager;
     Entity treeEntityPrefab;
 
+    public Transform player;
+
     public GameObject stage1TreePrefab;
     public GameObject stage2TreePrefab;
 
@@ -20,6 +22,7 @@ public class Settings : MonoBehaviour
     public GameObject seedPrefab;
     static Entity SeedEntityPrefab;
 
+    public int seedCount;
 
     public float _growRate;
     public float _scaleRate;
@@ -48,8 +51,28 @@ public class Settings : MonoBehaviour
 
         growRate = _growRate;
         ScaleRate = _scaleRate;
+        seedCount = 10;
+}
+
+public static void RemoveSeed()
+    {
+        instance.seedCount--;
     }
 
+    public static void AddSeed()
+    {
+        instance.seedCount++;
+    }
+
+    public static int GetSeedCount()
+    {
+        return instance.seedCount;
+    }
+
+    public static Vector3 PlayerPosition
+    {
+        get { return instance.player.position; }
+    }
 
     public static Mesh Stage1Prefab()
     {

@@ -19,10 +19,16 @@ public class WorldManager : MonoBehaviour
     }
     void Start()
     {
-        for (int i = 0; i < 100; i++)
+        for (int x = -8; x < 8; x++)
         {
-            Vector3 temp = new Vector3(UnityEngine.Random.Range(-30, 30), 0, UnityEngine.Random.Range(-30, 30));
-            SpawnTreePoint(temp);
+            for (int y = -8; y < 8; y++)
+            {
+                if (UnityEngine.Random.Range(0, 2) == 1)
+                {
+                    Vector3 temp = new Vector3(x * 2, 0, y * 2);
+                    SpawnTreePoint(temp);
+                }
+            }
         }
     }
 
