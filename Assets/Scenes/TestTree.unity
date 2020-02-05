@@ -1335,7 +1335,6 @@ GameObject:
   - component: {fileID: 453885105}
   - component: {fileID: 453885104}
   - component: {fileID: 453885106}
-  - component: {fileID: 453885107}
   m_Layer: 0
   m_Name: WorldHandler
   m_TagString: Untagged
@@ -1394,32 +1393,6 @@ MonoBehaviour:
   seedCount: 0
   _growRate: 3
   _scaleRate: 2
---- !u!114 &453885107
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 453885103}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5fe68ae767088db4abff4c9681d83ab7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  audioSource3D: {fileID: 0}
-  seedCollectionClips:
-  - {fileID: 8300000, guid: b0aae5d255f7581458e99b1d3444c2a8, type: 3}
-  - {fileID: 8300000, guid: c6784922a4e26df4da503d987ac11eaf, type: 3}
-  - {fileID: 8300000, guid: b85311407c3da994b9a4ab4136e8c47f, type: 3}
-  - {fileID: 8300000, guid: 1becb57c3be23044a9402e4196aeec99, type: 3}
-  - {fileID: 8300000, guid: bb8837ae60207ad45a49ac27c9d2d999, type: 3}
-  - {fileID: 8300000, guid: 052e30d8b65792d44b1ab6602ab64ac6, type: 3}
-  - {fileID: 8300000, guid: c16d5c01c2115c5478307cd5c4f053b5, type: 3}
-  - {fileID: 8300000, guid: bdf61cf55cbe08149a97004e55ecc0e6, type: 3}
-  - {fileID: 8300000, guid: e84f552edbd347d4ba846d961a5fcd95, type: 3}
-  - {fileID: 8300000, guid: bcca40ebdcd534c4fbd916d37000166f, type: 3}
-  planterClips: []
-  playerStepClips: []
 --- !u!1001 &475756440
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2325,6 +2298,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6999587734484681055, guid: 190ed11a3d36cd0429970d5c3770ee4a,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 190ed11a3d36cd0429970d5c3770ee4a, type: 3}
@@ -3347,8 +3325,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 0.34, y: 1.28, z: 0.4}
+  m_Center: {x: 0, y: -0.25, z: 0}
 --- !u!33 &1460830154
 MeshFilter:
   m_ObjectHideFlags: 0

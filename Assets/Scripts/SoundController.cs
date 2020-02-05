@@ -46,6 +46,7 @@ public class SoundController : MonoBehaviour
     {
         AudioSource source = GetAudioSource();
         source.clip = clip;
+        source.volume = 0.5f;
         source.Play();
     }
 

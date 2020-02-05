@@ -50,7 +50,7 @@ public class SeedCollectionSystem : JobComponentSystem
             {
                 CommandBuffer.DestroyEntity(jobIndex, entity);    
                 Settings.AddSeed();
-                //SoundController.Instance.PlayCollectSound();
+                SoundController.Instance.Play3D(SoundController.Instance.GetRandomClip(SoundController.Instance.seedCollectionClips), translation.Value);
             }
         }
     }
