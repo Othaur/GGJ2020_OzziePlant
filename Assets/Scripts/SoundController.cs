@@ -17,12 +17,23 @@ public class SoundController : MonoBehaviour
 
     public AudioClip[] playerStepClips;
 
+    public bool collectedSeed = false;
+
     private void Awake()
     {
         audioSources = new List<AudioSource>();
         if (Instance == null)
         {
             Instance = this;
+        }
+    }
+
+    private void Update()
+    {
+        if(collectedSeed)
+        {
+            Play2D(SoundController.Instance.GetRandomClip(SoundController.Instance.seedCollectionClips));
+            collectedSeed = false;
         }
     }
 
